@@ -1,0 +1,931 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+
+  --bg: #0b1118;
+  --card: #151e27;
+  --card-light: #1b2733;
+
+  --input: #0c151e;
+
+  --border: #344454;
+  --border-focus: #e8b14e;
+
+  --text: #f3f6f8;
+  --text-sub: #b8c4cf;
+  --text-muted: #7f91a2;
+
+  --yellow: #e8b14e;
+  --red: #e75b58;
+  --green: #55bd8b;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans KR",
+    Arial,
+    sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+input,
+textarea {
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* =========================
+   전체
+========================= */
+
+.app {
+  min-height: 100vh;
+
+  padding:
+    12px
+    10px
+    60px;
+}
+
+.container {
+  width: 100%;
+  max-width: 680px;
+
+  margin: 0 auto;
+}
+
+/* =========================
+   상단
+========================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 14px;
+  padding: 16px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 12px;
+
+  background:
+    var(--card);
+}
+
+.header > div {
+  min-width: 0;
+}
+
+.header h1 {
+  margin: 0 0 5px;
+
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.header p {
+  margin: 0;
+
+  color:
+    var(--text-sub);
+
+  font-size: 12px;
+}
+
+.reset-button {
+  flex: 0 0 auto;
+
+  min-height: 42px;
+
+  padding:
+    0
+    12px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 8px;
+
+  background:
+    var(--card-light);
+
+  color:
+    var(--text);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================
+   카드
+========================= */
+
+.card {
+  width: 100%;
+
+  margin-bottom: 14px;
+
+  padding:
+    18px
+    14px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 12px;
+
+  background:
+    var(--card);
+}
+
+/* =========================
+   기본 라벨
+========================= */
+
+.main-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 750;
+}
+
+/* =========================
+   제목
+========================= */
+
+.title-section input {
+  width: 100%;
+  min-height: 50px;
+
+  padding:
+    12px
+    13px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 9px;
+
+  background:
+    var(--input);
+
+  color: #ffffff;
+
+  outline: none;
+}
+
+.title-preview {
+  margin-top: 9px;
+
+  color:
+    var(--yellow);
+
+  font-size: 13px;
+}
+
+/* =========================
+   2보 / 3보 헤더
+========================= */
+
+.report-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 22px;
+
+  padding-bottom: 14px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+}
+
+.report-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.end-check {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  min-height: 38px;
+
+  padding:
+    6px
+    10px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.end-check input {
+  width: 19px;
+  height: 19px;
+
+  margin: 0;
+
+  accent-color:
+    var(--red);
+}
+
+/* =========================
+   일반 입력 필드
+========================= */
+
+.field {
+  margin-bottom: 28px;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field > input,
+.field > textarea,
+.patient-input {
+  width: 100%;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 9px;
+
+  background:
+    var(--input);
+
+  color: #ffffff;
+
+  outline: none;
+}
+
+.field > input,
+.patient-input {
+  min-height: 50px;
+
+  padding:
+    12px
+    13px;
+}
+
+.field > textarea {
+  min-height: 110px;
+
+  padding:
+    13px;
+
+  line-height: 1.6;
+
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color:
+    var(--text-muted);
+}
+
+input:focus,
+textarea:focus {
+  border-color:
+    var(--border-focus);
+}
+
+/* =========================
+   성상
+========================= */
+
+.property-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 10px;
+}
+
+.property-item {
+  min-width: 0;
+}
+
+.property-item:nth-child(3) {
+  grid-column:
+    1 / -1;
+}
+
+.property-item span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color:
+    var(--text-sub);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.property-item input {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+
+  padding:
+    11px
+    12px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 9px;
+
+  background:
+    var(--input);
+
+  color: #ffffff;
+
+  outline: none;
+}
+
+/* =========================
+   환자 여부
+========================= */
+
+.patient-title-row {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 9px;
+}
+
+.patient-title {
+  margin: 0;
+}
+
+.no-contact-check {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding:
+    5px
+    8px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 7px;
+
+  color:
+    var(--text-sub);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.no-contact-check input {
+  width: 18px;
+  height: 18px;
+
+  margin: 0;
+
+  accent-color:
+    var(--green);
+}
+
+.patient-input:disabled {
+  background: #101820;
+
+  color:
+    #8fa0af;
+
+  -webkit-text-fill-color:
+    #8fa0af;
+
+  opacity: 1;
+}
+
+/* =========================
+   대응 내용 / 조치 내용
+   핵심 영역
+========================= */
+
+.content-field {
+  padding-top: 2px;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  width: 100%;
+}
+
+/*
+  번호 | 큰 입력창 | 삭제버튼
+
+  서로 완전히 분리
+*/
+.numbered-row {
+  display: grid;
+
+  grid-template-columns:
+    30px
+    minmax(0, 1fr)
+    42px;
+
+  align-items: start;
+
+  gap: 8px;
+
+  width: 100%;
+}
+
+/* 항목이 하나뿐이라 삭제버튼이 없을 때 */
+.numbered-row:has(.list-textarea:last-child) {
+  grid-template-columns:
+    30px
+    minmax(0, 1fr);
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  margin-top: 11px;
+
+  border-radius: 50%;
+
+  background:
+    var(--card-light);
+
+  color:
+    var(--yellow);
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/*
+  대응 내용 / 조치 내용
+  큰 입력창
+*/
+.list-textarea {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+
+  min-height: 96px;
+
+  padding:
+    12px
+    13px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 10px;
+
+  background:
+    var(--input);
+
+  color: #ffffff;
+
+  line-height: 1.55;
+
+  resize: vertical;
+
+  outline: none;
+}
+
+.list-textarea:focus {
+  border-color:
+    var(--yellow);
+}
+
+/* 삭제 버튼 */
+.delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-top: 5px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(
+      231,
+      91,
+      88,
+      0.55
+    );
+
+  border-radius: 8px;
+
+  background:
+    rgba(
+      231,
+      91,
+      88,
+      0.12
+    );
+
+  color:
+    #ff8f8c;
+
+  font-size: 22px;
+}
+
+/*
+  추가 버튼
+  입력창과 완전히 분리
+*/
+.add-button {
+  display: block;
+
+  width: 100%;
+
+  min-height: 50px;
+
+  margin-top: 16px;
+
+  padding:
+    12px;
+
+  border:
+    1px dashed
+    #536778;
+
+  border-radius: 9px;
+
+  background:
+    #101b25;
+
+  color:
+    #c4ced7;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.add-button:active {
+  background:
+    var(--card-light);
+}
+
+/* =========================
+   종료 영역
+========================= */
+
+.end-section {
+  margin-top: 6px;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid
+    var(--border);
+}
+
+.end-options {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.end-option {
+  display: grid;
+
+  grid-template-columns:
+    22px
+    minmax(0, 1fr);
+
+  gap: 8px;
+
+  align-items: start;
+
+  padding:
+    13px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 9px;
+
+  background:
+    var(--input);
+
+  color:
+    var(--text);
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.end-option input {
+  width: 19px;
+  height: 19px;
+
+  margin: 1px 0 0;
+
+  accent-color:
+    var(--red);
+}
+
+/* =========================
+   최종 내용
+========================= */
+
+.preview-card {
+  width: 100%;
+
+  margin-bottom: 14px;
+
+  padding:
+    17px
+    14px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 12px;
+
+  background:
+    #070c11;
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+.preview-header h3 {
+  margin: 0;
+
+  color:
+    var(--yellow);
+
+  font-size: 15px;
+}
+
+.copy-button {
+  min-height: 42px;
+
+  padding:
+    0
+    14px;
+
+  border:
+    1px solid
+    var(--yellow);
+
+  border-radius: 8px;
+
+  background:
+    transparent;
+
+  color:
+    var(--yellow);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.preview-card pre {
+  margin: 0;
+
+  white-space: pre-wrap;
+  word-break: break-word;
+
+  color: #edf2f6;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans KR",
+    sans-serif;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================
+   3보 버튼
+========================= */
+
+.third-create-button {
+  width: 100%;
+
+  min-height: 54px;
+
+  margin-bottom: 14px;
+
+  border:
+    1px solid
+    var(--yellow);
+
+  border-radius: 10px;
+
+  background:
+    transparent;
+
+  color:
+    var(--yellow);
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* =========================
+   아주 작은 모바일
+========================= */
+
+@media (max-width: 370px) {
+
+  .app {
+    padding:
+      8px
+      7px
+      50px;
+  }
+
+  .header {
+    padding:
+      14px
+      12px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .card,
+  .preview-card {
+    padding:
+      16px
+      11px;
+  }
+
+  /*
+    작은 휴대폰에서도
+    입력창 크기를 줄이지 않음
+  */
+  .numbered-row {
+    grid-template-columns:
+      26px
+      minmax(0, 1fr)
+      38px;
+
+    gap: 6px;
+  }
+
+  .numbered-row:has(.list-textarea:last-child) {
+    grid-template-columns:
+      26px
+      minmax(0, 1fr);
+  }
+
+  .number {
+    width: 25px;
+    height: 25px;
+
+    font-size: 12px;
+  }
+
+  .delete-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .list-textarea {
+    min-height: 100px;
+  }
+}
+
+/* =========================
+   PC / 태블릿
+========================= */
+
+@media (min-width: 560px) {
+
+  .app {
+    padding:
+      26px
+      18px
+      80px;
+  }
+
+  .card,
+  .preview-card {
+    padding:
+      21px
+      20px;
+  }
+
+  .property-grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+  }
+
+  .property-item:nth-child(3) {
+    grid-column: auto;
+  }
+}
