@@ -846,18 +846,15 @@ function ReportForm({
           </label>
         </div>
 
-        <input
-          type="text"
-          className="patient-input"
+        <textarea
+          className="patient-input patient-textarea"
           placeholder={
             report.noContact
               ? "접촉자 없음"
               : "환자 정보를 입력하세요."
           }
           value={report.patient}
-          disabled={
-            report.noContact
-          }
+          disabled={report.noContact}
           onChange={(e) =>
             updateReport(
               reportKey,

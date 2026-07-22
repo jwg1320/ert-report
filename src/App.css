@@ -928,4 +928,11 @@ textarea:focus {
   .property-item:nth-child(3) {
     grid-column: auto;
   }
+  
+  .patient-textarea {
+    min-height: 110px;
+    padding: 13px;
+    line-height: 1.6;
+    resize: vertical;
+  }
 }
